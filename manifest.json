@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Website Logger to Discord",
+  "version": "1.0",
+  "permissions": ["tabs", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "description": "Sends visited URLs to a Discord webhook automatically.",
+  "action": {
+    "default_title": "Website Logger"
+  }
+}

